@@ -1,10 +1,17 @@
 Raspberry Pi Initial Configuration
 ===
-First Boot and raspi-config
+These are the steps that I follow when initially configuring a Raspberry Pi. This is based on the *Raspberry Pi Software Configuration Tool (raspi-config)* which comes with **2014-06-20-wheezy-raspbian.img**.
+
+First Boot
 ---
+To access raspi-config you have two options:
 
-These are the steps that I follow when initially configuring a Raspberry Pi. This is based on the *Raspberry Pi Software Configuration Tool (raspi-config)* which comes with **2014-01-07-wheezy-raspbian.img**.
+1. Plug in a monitor and keybard.
 
+2. The system has sshd listening so if you can figure out its IP address remotely (possibly consulting your router or DHCP server's logs, or using `nmap`) you can configure it by accessing via ssh. The pi user's default password is: raspberry. Once in you can execute `sudo raspi-config`.
+
+raspi-config
+---
 To get around you typically use the arrow keys, tab, and enter, as you do in the default Debian setup environment.
 
 1. Expand Filesystem - if you are using a card larger than the Raspbian image this is a no-brainer.
@@ -37,7 +44,7 @@ We're done! If you select "Finish" it will prompt for a reboot and you are good 
 
 Initial Login
 ---
-Upon first boot, you'll want to log into the Raspberry Pi with the "pi" login and the password you specified during configuration. Some steps you might take at this point:
+Upon first boot, you'll want to log into the Raspberry Pi with the "pi" login and the password you specified during configuration. If you didn't change the default password, it is: raspberry. Some steps you might take at this point:
 
 * Remote access is enabled, however by default the Raspberry Pi is configured to use DHCP. For headless Raspberry Pis, I like to configure a static IP address. This is done following the same steps as in Debian:
 	1. Edit `/etc/network/interfaces` (I use `vi`. By default, `nano` is installed and may be easier if you are unfamiliar with vi).
@@ -77,14 +84,15 @@ From this point on, you can SSH in from another workstation to continue configur
 		fonts-freefont-ttf gsfonts gsfonts-x11 x11-common x11-xkb-utils \
 		x11-xserver-utils xfonts-encodings xfonts-utils xinit tasksel tasksel-data
 		sudo apt-get autoremove
+		sudo apt-get autoclean
  This currently results in savings of about 1 GB of storage.
+ 
+  Another option for cleaning up the X Window System can be found [here at tweaking4all.com](http://www.tweaking4all.com/forums/topic/minimalistic-raspbian-removing-x/). Note: those instructions recommend running `sudo apt-get clean` which will remove all packages from the package cache which you probably don't want - just skip that step.
 
-* At this point it's probably a good idea to update Raspbian. I typically use `sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade`.
+* At this point it's probably a good idea to ensure Raspbian is up-to-date. I typically use `sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade`.
 
 * If you are working in an environment with OS X, you may want to enable ZeroConf/Bonjour name resolution. You can do that using the [Avahi](https://wiki.debian.org/ZeroConf) package with `sudo apt-get install avahi-daemon avahi-discover libnss-mdns`. Once this is installed, you will be able to resolve the machine as *hostname*.local. This is very handy if your headless Raspberry Pi is configured with DHCP.
 
 * The Raspberry Pi does not have a real-time clock so it appears to [use the time saved during the last shutdown](http://captainbodgit.blogspot.com/2013/10/raspberrypi-keeping-time-without.html) to set the clock upon boot if it cannot reach a time server. It might be a good idea to take a look at the NTP configuration and ensure that it's appropriate for your environment. By default, the Raspberry Pi will use NTP servers sent out by your DHCP server. You can see the current status with `ntpq -p`, you are looking for a line with an asterisk (*) in the first column indicating that there's a valid time source (you might need to wait a while after a reboot for things to sync up). If you need assistance in configuring NTP, I'd recommend reviewing: [How do I use pool.ntp.org?](http://www.pool.ntp.org/en/use.html).
 
-  If you wish to manually configure NTP while still using DHCP, you can remove `ntp-servers` from the "request" line in `/etc/dhcp/dhclient.conf` and then configure NTP normally (`/etc/ntp.conf`). If you do not take this step, every time a DHCP address is provided it may overwrite your NTP configuration with what is provided by the DHCP server.
-
-
+  If you wish to manually configure NTP while still using DHCP, you can remove `ntp-servers` from the "request" line in `/etc/dhcp/dhclient.conf`, remove the `/var/lib/ntp/ntp.conf.dhcp` file, and then configure NTP normally (`/etc/ntp.conf`). If you do not take this step, every time the DHCP lease is renewed it will update the `/var/lib/ntp/ntp.conf.dhcp` file and use those NTP servers.
