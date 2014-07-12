@@ -23,7 +23,7 @@ You'll need some information to properly configure the VPN software:
 
 Initial configuraiton
 ---
-1. Forward TCP ports 500, 4500, 1701 to the Raspberry Pi.
+1. Forward UDP ports 500, 4500, 1701 to the Raspberry Pi.
 
 2. On the Raspberry Pi, `sudo apt-get install racoon xl2tpd iptables` (Choose the "direct" configuration method for Racoon).
 
