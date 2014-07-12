@@ -11,15 +11,15 @@ Information you'll need
 ---
 You'll need some information to properly configure the VPN software:
 
-1. The IP address of your Raspberry Pi - you do not want this to change as you need to configure port forwarding and you also need to include this address in some configuration files. I will refer to this as the **`***RPI-IP***`**.
+1. The IP address of your Raspberry Pi - you do not want this to change as you need to configure port forwarding and you also need to include this address in some configuration files. I will refer to this as the `***RPI-IP***`.
 
-2. A block of IP addresses to assign to VPN clients. This block of IP addresse should not be addresses given out by your DHCP server but should fall in your subnet at home. You'll need to know this block in [CIDR](http://en.wikipedia.org/wiki/CIDR) format (e.g. 10.0.0.24/29). There are a number of CIDR calculators available on the Web, just do a search if you need one. I will refer to this as the **`***NETBLOCK-CIDR***`**. Also you'll need these IP addresses as a range separated by a dash (such as 10.0.0.24-10.0.0.31) which I will refer to as **`***NETBLOCK-RANGE***`**.
+2. A block of IP addresses to assign to VPN clients. This block of IP addresse should not be addresses given out by your DHCP server but should fall in your subnet at home. You'll need to know this block in [CIDR](http://en.wikipedia.org/wiki/CIDR) format (e.g. 10.0.0.24/29). There are a number of CIDR calculators available on the Web, just do a search if you need one. I will refer to this as the `***NETBLOCK-CIDR***`. Also you'll need these IP addresses as a range separated by a dash (such as 10.0.0.24-10.0.0.31) which I will refer to as `***NETBLOCK-RANGE***`.
 
-3. A pre-shared key - this is a secret string of characters used as part of the authenticaton process. I will refer to this as **`***PRE-SHARED-KEY***`**. This can easily be generated with `pwgen` using a command similar to `pwgen -sy 16`. Note: you'll need to type this in to every device you wish to VPN from, so consider the difficulty in typing it on your mobile device's keyboard before you go crazy with it.
+3. A pre-shared key - this is a secret string of characters used as part of the authenticaton process. I will refer to this as `***PRE-SHARED-KEY***`. This can easily be generated with `pwgen` using a command similar to `pwgen -sy 16`. Note: you'll need to type this in to every device you wish to VPN from, so consider the difficulty in typing it on your mobile device's keyboard before you go crazy with it.
 
-4. A couple of DNS servers, either on your network or public (such as [Google Public DNS](https://developers.google.com/speed/public-dns/) servers at 8.8.8.8 and 8.8.4.4). I'll refer ot these as **`***DNS1***`** and **`***DNS2***`**. If you need to see which DNS servers your Raspberry Pi is using, you can find out with `grep nameserver /etc/resolv.conf`.
+4. A couple of DNS servers, either on your network or public (such as [Google Public DNS](https://developers.google.com/speed/public-dns/) servers at 8.8.8.8 and 8.8.4.4). I'll refer ot these as `***DNS1***` and `***DNS2***`. If you need to see which DNS servers your Raspberry Pi is using, you can find out with `grep nameserver /etc/resolv.conf`.
 
-5. For each VPN user you'll need a **`***USERNAME***`** and **`***PASSWORD***`**. The same `pwgen` advice from above applies.
+5. For each VPN user you'll need a `***USERNAME***` and `***PASSWORD***`. The same `pwgen` advice from above applies.
 
 Initial configuraiton
 ---
