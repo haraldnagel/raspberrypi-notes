@@ -3,7 +3,9 @@ Raspberry Pi L2TP/IPsec VPN Server
 Introduction
 ---
 
-Following these steps, I created an RSA-certificate-based L2TP VPN Server on my Raspberry Pi behind a NAT at home. These instructions were based on **2014-06-20-wheezy-raspbian.img**.
+Following these steps, I created an RSA-certificate-based L2TP VPN Server on my Raspberry Pi behind a NAT at home. These instructions were constructed using **2014-06-20-wheezy-raspbian.img**.
+
+These instructions closely follow the [Debian HowTo on creating an Android VPN Server](https://wiki.debian.org/HowTo/AndroidVPNServer).
 
 Information you'll need
 ---
