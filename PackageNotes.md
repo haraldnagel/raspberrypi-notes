@@ -13,10 +13,10 @@ Question found at: [apt-get installing unnecessary packages](http://www.raspberr
 
 transmission-daemon
 ---
-By default, transmission-daemon spews tons of text into `/var/log/syslog`. To resolve, add the following lines to `/etc/rsyslog.conf` between the "RULES" heading and the "First some standard log files..." heading:
+By default, transmission-daemon spews tons of text into `/var/log/syslog`. To resolve, create the file  `/etc/rsyslog.d/transmission.conf` containing the following lines:
 
-	:programname, :isequal, "transmission-daemon"   /var/log/transmission.log
-	:programname, :isequal, "transmission-daemon"   ~
+	:programname,isequal,"transmission-daemon"   /var/log/transmission.log
+	:programname,isequal,"transmission-daemon"   ~
 
 To ensure that the log file is rotated regularly, in `/etc/logrotate.d/rsyslog`, under the "/var/log/messages" line, add:
 
