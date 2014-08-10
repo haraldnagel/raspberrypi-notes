@@ -59,35 +59,11 @@ Upon first boot, you'll want to log into the Raspberry Pi with the "pi" login an
 	5. You can either reboot at this point or `sudo ifdown eth0 && sudo ifup eth0` to reset the network interface (you can see the current configuration with `/sbin/ifconfig`).
 	6. If you do intend to continue working remotely, don't forget test SSH access before disconnecting the monitor and keyboard so that you don't have to hook everything back up if you've made a typo. I do not speak from personal experience on this at all.
 
-From this point on, you can SSH in from another workstation to continue configuration if that is easier (it might be due to the ability to have cut and paste).
+From this point on, you can SSH in from another workstation to continue configuration if you have been working at the console and remote access would be easier (it might be due to the ability to have cut and paste).
 
 * You may wish to change the time zone for the "pi" user. You can run `tzselect` to walk you through the time zone options which will end up providing you a line to add to the end of your `.profile` file. Cut and paste is handy here.
 
-* You may want to remove some packages that you aren't likely to use. The scope of that is well outside this document, however here's a line I have used in the past to remove packages that I don't typically use on a headless Raspberry Pi. These are hand-selected by me and will certainly cause issues if your Pi is trying to boot to the X Window environment as these packages are critical for that environment to run. Safety not guaranteed:
-
-		sudo apt-get remove cups-bsd cups-client cups-common ghostscript libaudio2 \
-		libcups2 libcupsimage2 libgail-3-0 libgl1-mesa-glx libglapi-mesa libgs9 \
-		libgs9-common libgtk-3-0 libgtk-3-bin libgtk-3-common libicu48 liblvm2app2.2 \
-		libopenjpeg2 librsvg2-2 librsvg2-common omxplayer python-pifacecommon \
-		python-pifacedigitalio python3-pifacecommon \
-		python3-pifacedigital-scratch-handler python3-pifacedigitalio samba-common \
-		scratch smbclient squeak-vm xserver-common xserver-xorg-core fonts-droid \
-		gir1.2-glib-2.0 gnome-accessibility-themes gnome-themes-standard-data jackd \
-		jackd2 lesstif2 libcwiid1 libfftw3-3 libfile-copy-recursive-perl \
-		libgirepository-1.0-1 libijs-0.35 libjack-jackd2-0 libjbig2dec0 \
-		liblightdm-gobject-1-0 libpaper-utils libpaper1 libqt4-dbus libqt4-network \
-		libqt4-xml libqtdbus4 libruby1.9.1 libscsynth1 libwebkitgtk-3.0-common \
-		libxklavier16 libxp6 libyaml-0-2 poppler-data python-dbus python-dbus-dev \
-		python-gi qdbus ruby1.9.1 squeak-plugins-scratch supercollider-common \
-		supercollider-server update-inetd zenity-common alsa-base alsa-utils aptitude \
-		aptitude-common aspell aspell-en dbus-x11 fontconfig fontconfig-config \
-		fonts-freefont-ttf gsfonts gsfonts-x11 x11-common x11-xkb-utils \
-		x11-xserver-utils xfonts-encodings xfonts-utils xinit tasksel tasksel-data
-		sudo apt-get autoremove
-		sudo apt-get autoclean
- This currently results in savings of about 1 GB of storage.
- 
-  Another option for cleaning up the X Window System can be found [here at tweaking4all.com](http://www.tweaking4all.com/forums/topic/minimalistic-raspbian-removing-x/). Note: those instructions recommend running `sudo apt-get clean` which will remove all packages from the package cache which you probably don't want - just skip that step.
+* You may want to remove some packages that you aren't likely to use. I've prepared a document outlining how I [remove packages that I don't need for headless Raspberry Pis](HeadlessConfig.md).
 
 * At this point it's probably a good idea to ensure Raspbian is up-to-date. I typically use `sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade`.
 
