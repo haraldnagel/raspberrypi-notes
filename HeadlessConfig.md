@@ -29,9 +29,11 @@ When configuring a headless Raspberry Pi, I like to start with a basic install f
 	libsoup-gnome2.4-1 libsoup2.4-1 libstartup-notification0 libts-0.0-0 \ 
 	libunique-1.0-0 libusbmuxd1 libvorbis0a libvorbisenc2 libvorbisfile3 \
 	libvte-common libvte9 libwayland0 libwebkitgtk-1.0-0 libwebkitgtk-3.0-0 \
-	libwebkitgtk-3.0-common libwebp2 libwnck-common libwnck22 libx11-6 libx11-data \libx11-	xcb1 libxapian-dev libxapian22 libxau6 libxaw7 libxcb-glx0 \
+	libwebkitgtk-3.0-common libwebp2 libwnck-common libwnck22 libx11-6 libx11-data \
+	libx11-	xcb1 libxapian-dev libxapian22 libxau6 libxaw7 libxcb-glx0 \
 	libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-util0 libxcb-xfixes0 libxcb1 \
-	libxcomposite1 libxcursor1 libxdamage1 libxdmcp6 libxext6 libxfixes3 libxfont1 \libxft2 	libxi6 libxinerama1 libxkbcommon0 libxkbfile1 libxklavier16 libxml2 \
+	libxcomposite1 libxcursor1 libxdamage1 libxdmcp6 libxext6 libxfixes3 libxfont1 \
+	libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1 libxklavier16 libxml2 \
 	libxmu6 libxmuu1 libxp6 libxpm4 libxrandr2 libxrender1 libxres1 libxslt1.1 \
 	libxss1 libxt6 libxtst6 libxv1 libxxf86dga1 libxxf86vm1 libyaml-0-2 lightdm \
 	lightdm-gtk-greeter lxappearance lxde lxde-common lxde-core lxde-icon-theme \
@@ -46,7 +48,8 @@ When configuring a headless Raspberry Pi, I like to start with a basic install f
 	sonic-pi squeak-plugins-scratch squeak-vm supercollider supercollider-common \
 	supercollider-server tasksel tasksel-data tcl8.5 timidity tk8.5 tsconf \
 	update-inetd usbmuxd weston wolfram-engine wpagui x11-common x11-utils \
-	x11-xkb-utils -xserver-utils x2x xarchiver xauth xfonts-encodings xfonts-utils \xinit 	xpdf xserver-common xserver-xorg xserver-xorg-core \
+	x11-xkb-utils -xserver-utils x2x xarchiver xauth xfonts-encodings xfonts-utils \
+	xinit xpdf xserver-common xserver-xorg xserver-xorg-core \
 	xserver-xorg-input-all xserver-xorg-input-evdev xserver-xorg-input-synaptics \
 	xserver-xorg-video-fbdev xserver-xorg-video-fbturbo zenity zenity-common
 	apt-get autoremove
