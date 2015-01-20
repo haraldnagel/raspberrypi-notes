@@ -30,7 +30,7 @@ When configuring a headless Raspberry Pi, I like to start with a basic install f
 	libunique-1.0-0 libusbmuxd1 libvorbis0a libvorbisenc2 libvorbisfile3 \
 	libvte-common libvte9 libwayland0 libwebkitgtk-1.0-0 libwebkitgtk-3.0-0 \
 	libwebkitgtk-3.0-common libwebp2 libwnck-common libwnck22 libx11-6 libx11-data \
-	libx11-	xcb1 libxapian-dev libxapian22 libxau6 libxaw7 libxcb-glx0 \
+	libx11-xcb1 libxapian-dev libxapian22 libxau6 libxaw7 libxcb-glx0 \
 	libxcb-render0 libxcb-shape0 libxcb-shm0 libxcb-util0 libxcb-xfixes0 libxcb1 \
 	libxcomposite1 libxcursor1 libxdamage1 libxdmcp6 libxext6 libxfixes3 libxfont1 \
 	libxft2 libxi6 libxinerama1 libxkbcommon0 libxkbfile1 libxklavier16 libxml2 \
