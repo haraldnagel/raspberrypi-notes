@@ -48,7 +48,7 @@ When configuring a headless Raspberry Pi, I like to start with a basic install f
 	sonic-pi squeak-plugins-scratch squeak-vm supercollider supercollider-common \
 	supercollider-server tasksel tasksel-data tcl8.5 timidity tk8.5 tsconf \
 	update-inetd usbmuxd weston wolfram-engine wpagui x11-common x11-utils \
-	x11-xkb-utils -xserver-utils x2x xarchiver xauth xfonts-encodings xfonts-utils \
+	x11-xkb-utils x-server-utils x2x xarchiver xauth xfonts-encodings xfonts-utils \
 	xinit xpdf xserver-common xserver-xorg xserver-xorg-core \
 	xserver-xorg-input-all xserver-xorg-input-evdev xserver-xorg-input-synaptics \
 	xserver-xorg-video-fbdev xserver-xorg-video-fbturbo zenity zenity-common
