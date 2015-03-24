@@ -1,6 +1,6 @@
 # HummingBoard-i2eX vs Raspberry Pi 2
 
-Just some quick benchmarks to compoare performance of the [HummingBoard-i2eX](http://www.solid-run.com/product/hummingboard-i2ex/) with the [Raspberry Pi 2](http://www.raspberrypi.org/raspberry-pi-2-on-sale/). Obviously this is not scientific.
+Just some quick benchmarks to compare performance of the [HummingBoard-i2eX](http://www.solid-run.com/product/hummingboard-i2ex/) with the [Raspberry Pi 2](http://www.raspberrypi.org/raspberry-pi-2-on-sale/). Obviously this is not scientific.
 
 Both systems were running a clean install of Debian ([Cubox-i-Debian 2.6](https://github.com/igorpecovnik/Cubox-i-Debian) for the HummingBoard, [Raspbian February 2015](http://www.raspberrypi.org/downloads/) for the RPi) - both updated after installation. Both systems using [SanDisk Ultra 16GB MicroSDHC Class 10 UHS](http://www.amazon.com/dp/B007XZL7PC) flash storage. Tests performed on 21 March 2015.
 
