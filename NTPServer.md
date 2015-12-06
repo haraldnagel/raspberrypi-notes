@@ -18,7 +18,9 @@ I'm using the following hardware:
 * Raspberry Pi B
 * [Adafruit Small-Size Perma-Proto Raspberry Pi Breadboard PCB Kit](https://www.adafruit.com/products/1171)
 * [Adafruit Ultimate GPS Breakout](https://www.adafruit.com/products/746)
-
+ 
+**TODO: add information about how the board is connected here**
+ 
 Initial Setup
 ---
 I follow [my own guide](InitialSetup.md) for the initial setup but note the following change and detail:
