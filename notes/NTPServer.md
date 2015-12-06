@@ -26,7 +26,7 @@ In order to simplify construction I soldered four pins of the GPS board to the p
  
 Initial Setup
 ---
-I follow [my own guide](InitialSetup.md) for the initial setup but note the following change and detail:
+I follow [my own guide](InitialConfiguration.md) for the initial setup but note the following change and detail:
 
 * On raspi-config step 9, I use the "Serial" option to disable the serial console.
 * If you use dhcp, ensure you perform the last step on that page to stop the dhcp server from overwriting your ntp configuration file.
