@@ -43,9 +43,9 @@ According to David Taylor's [user-mode configuration](http://www.satsignal.eu/nt
 5. `q` to exit cgps.
 6. Due to what seems to be a systemd configuration problem, we have to [tell Raspbian to start gpsd on boot](https://lists.debian.org/debian-user/2015/10/msg01281.html). Edit `/lib/systemd/system/gpsd.service` and find the `[Install]` section and insert a line between that section header and the `Also=gpsd.socket` line:
 
-       [Install]
-       WantedBy=multi-user.target
-       Also=gpsd.socket
+        [Install]
+        WantedBy=multi-user.target
+        Also=gpsd.socket
        
     Then run `sudo systemctl enable gpsd.service`.
 
@@ -55,9 +55,9 @@ According to David Taylor's [user-mode configuration](http://www.satsignal.eu/nt
 
 1. Edit `/etc/ntpd.conf` and add this section so we can figure out an appropriate fudge value to use for your configuration:
    
-       # Server to be monitored only, not selected for syncing
-       server 127.127.28.0 minpoll 4 maxpoll 4 noselect
-       fudge 127.127.28.0 time1 0.000 refid GPSD
+        # Server to be monitored only, not selected for syncing
+        server 127.127.28.0 minpoll 4 maxpoll 4 noselect
+        fudge 127.127.28.0 time1 0.000 refid GPSD
 
    You can add a couple other servers if you'd like (or leave some pool servers enabled), as well. Restart ntpd with `sudo service ntp restart`.
 
@@ -81,12 +81,12 @@ According to David Taylor's [user-mode configuration](http://www.satsignal.eu/nt
 
 6. Edit `/etc/rc.local` and add the following line before `exit 0` at the bottom of the file:
 
-       /usr/local/bin/rpi_gpio_ntp -N 1 -g 18
+        /usr/local/bin/rpi_gpio_ntp -N 1 -g 18
 
 7. Edit your `/etc/ntp.conf` again to add the PPS source:
 
-       server 127.127.28.1 minpoll 4 prefer
-       fudge 127.127.28.1 refid UPPS
+        server 127.127.28.1 minpoll 4 prefer
+        fudge 127.127.28.1 refid UPPS
 
 8. `sudo reboot` to make sure everything comes up properly on boot.
 
