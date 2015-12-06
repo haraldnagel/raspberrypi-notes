@@ -19,7 +19,10 @@ I'm using the following hardware:
 * [Adafruit Small-Size Perma-Proto Raspberry Pi Breadboard PCB Kit](https://www.adafruit.com/products/1171)
 * [Adafruit Ultimate GPS Breakout](https://www.adafruit.com/products/746)
  
-**TODO: add information about how the board is connected here**
+In order to simplify construction I soldered four pins of the GPS board to the perma-proto board. In order to get the PPS to pin 18 on the Raspberry Pi I snuck a wire in underneath that you can sort-of see in the edge-on picture.
+
+![Overview of board](images/overview.jpg)
+![Edge-on view](images/edge.jpg)
  
 Initial Setup
 ---
