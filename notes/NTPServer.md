@@ -4,7 +4,7 @@ I've been running a couple GPS-based Raspberry Pi NTP servers for a while. Here 
 
 Credit
 ---
-The following pages helped witht his process
+The following pages helped with this process
 
 * [David Taylor](http://www.satsignal.eu/davids.html) has a [Raspberry Pi NTP page](http://www.satsignal.eu/ntp/Raspberry-Pi-NTP.html) that the definitive source.
 * Running PPS without a kernel hack is possible due to [rpi_gpio_ntp](https://www.vanheusden.com/time/rpi_gpio_ntp/) by [Folkert van Heusden](https://www.vanheusden.com).
@@ -18,8 +18,13 @@ I'm using the following hardware:
 * Raspberry Pi B
 * [Adafruit Small-Size Perma-Proto Raspberry Pi Breadboard PCB Kit](https://www.adafruit.com/products/1171)
 * [Adafruit Ultimate GPS Breakout](https://www.adafruit.com/products/746)
- 
-In order to simplify construction I soldered four pins of the GPS board to the perma-proto board. In order to get the PPS to pin 18 on the Raspberry Pi I snuck a wire in underneath that you can sort-of see in the edge-on picture.
+
+Life would be a lot easier if I'd waited and instead, gotten:
+
+* Raspberry Pi B+ or Raspberry Pi 2
+* [Adafruit Ultimate GPS HAT for Raspberry Pi](https://www.adafruit.com/products/2324)
+
+In order to simplify construction I soldered four pins of the GPS board to the perma-proto board. In order to get the PPS to pin 18 on the Raspberry Pi I snuck a wire in underneath that you can sort-of see in the edge-on picture (sorry about the mess on that GPS board, I'd soldered the full header in during prior experimentation and had to remove it).
 
 ![Overview of board](images/overview.jpg)
 ![Edge-on view](images/edge.jpg)
