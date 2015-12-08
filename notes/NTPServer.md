@@ -19,7 +19,7 @@ I'm using the following hardware:
 * [Adafruit Small-Size Perma-Proto Raspberry Pi Breadboard PCB Kit](https://www.adafruit.com/products/1171)
 * [Adafruit Ultimate GPS Breakout](https://www.adafruit.com/products/746)
 
-Life would be a lot easier if I'd waited and instead, gotten:
+Life would have been a lot easier if I'd just waited and instead acquired:
 
 * Raspberry Pi B+ or Raspberry Pi 2
 * [Adafruit Ultimate GPS HAT for Raspberry Pi](https://www.adafruit.com/products/2324)
