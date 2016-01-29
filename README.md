@@ -12,4 +12,4 @@ This repository holds my notes and information about working with the [Raspberry
 
 * Using a GPS board and a prototype board from Adafruit I have several Stratum 1 NTP servers configured [following these steps](notes/NTPServer.md).
 
-* Out of curiosity I obtained a Hummingboard and did some [performance testing](HummingBoardvsRPi2.md) with it.
+* Out of curiosity I obtained a Hummingboard and did some [performance testing](notes/HummingBoardvsRPi2.md) with it.
